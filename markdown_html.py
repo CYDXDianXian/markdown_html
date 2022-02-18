@@ -31,15 +31,14 @@ c_num = 0
 f_num = 0
 for markdown_file in Path(input_path).iterdir():
     try:
-        with Path(markdown_file).open(mode='r', encoding='utf-8') as f:
-            text = f.read() # 读取文件内容，解决报错＜_io.TextIOWrapper name='xxx.net' mode='r' encoding='UTF-8'＞
-            html = markdown.markdown(text, extensions=ext_list) # 转为html文本，extensions使用扩展列表
-            # 保存为文件
-            html_name = f"{markdown_file.name.split('.')[0]}.html" 
-            # .name读取路径中的文件名。.split('.')[0]表示以.为分割生成一个列表并读取列中表第一个值
-            Path(output_path, html_name).write_text(html, encoding='utf-8')
-            c_num += 1
-            print('ok:', html_name)
+        text = Path(markdown_file).read_text(encoding='utf-8') # 以字符串形式返回路径指向的文件的解码后文本内容。
+        html = markdown.markdown(text, extensions=ext_list) # 转为html文本，extensions使用扩展列表
+        # 保存为文件
+        html_name = f"{markdown_file.name.split('.')[0]}.html" 
+        # .name读取路径中的文件名。.split('.')[0]表示以.为分割生成一个列表并读取列中表第一个值
+        Path(output_path, html_name).write_text(html, encoding='utf-8')
+        c_num += 1
+        print('ok:', html_name)
     except:
         f_num += 1
         traceback.print_exc()
