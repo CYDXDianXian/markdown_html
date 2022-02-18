@@ -8,7 +8,7 @@ markdown批量转html小工具
 
 ## 使用方法
 
-去[Releases](https://github.com/CYDXDianXian/markdown_html/releases)中下载exe文件，按提示使用，或者安装如下方法使用：
+去[Releases](https://github.com/CYDXDianXian/markdown_html/releases)中下载exe文件，按提示使用，或者按照如下方法使用：
 
 1. 克隆仓库：`git clone https://github.com/CYDXDianXian/markdown_html.git`
 
