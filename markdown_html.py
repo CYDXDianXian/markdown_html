@@ -14,7 +14,6 @@ output_path = 'html输出'
 input_path = 'markdown输入'
 Path(input_path).mkdir(parents=True, exist_ok=True)
 print('【markdown输入】文件夹已创建，请将markdowm文件放入该文件夹中')
-sleep(2)
 Path(output_path).mkdir(parents=True, exist_ok=True)
 
 # 创建markdown扩展列表
