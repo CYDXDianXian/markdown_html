@@ -33,7 +33,6 @@ for markdown_file in Path(input_path).iterdir():
     try:
         text = Path(markdown_file).read_text(encoding='utf-8') # 以字符串形式返回路径指向的文件的解码后文本内容。
         html = markdown.markdown(text, extensions=ext_list) # 转为html文本，extensions使用扩展列表
-        # 保存为文件
         html_name = f"{markdown_file.name.split('.')[0]}.html" 
         # .name读取路径中的文件名。.split('.')[0]表示以.为分割生成一个列表并读取列中表第一个值
         Path(output_path, html_name).write_text(html, encoding='utf-8')
